@@ -1,5 +1,7 @@
 ---
-title: "About This Website"
+title: "About"
 ---
+## Ejercicio de Estadística - Grado de Física
+Estadística inferencial: del análisis muestral a la predicción poblacional (demo).
 
-More about this website.
+**Susana Font**

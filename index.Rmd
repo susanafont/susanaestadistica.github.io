@@ -2,4 +2,247 @@
 title: "Estadística Inferencial"
 ---
 
-Hello, Website!
+## Ejercicio
+
+### 1.	Una breve descripción sobre qué son y para qué se utilizan los «contrastes de hipótesis» (puedes/debes citar la literatura pertinente).
+
+Un contraste de hipótesis es una herramienta de la estadística inferencial. Su objetivo es evaluar si los datos de una muestra proporcionan suficiente evidencia para rechazar o no una afirmación inicial sobre un parámetro poblacional.
+
+Los contrastes de hipótesis son el mecanismo formal mediante el cual la estadística inferencial convierte datos de una muestra en decisiones razonadas sobre la realidad, cuantificando siempre el grado de certeza asociado a esas decisiones.
+
+Los contrastes de hipótesis son el motor de la investigación científica y la toma de decisiones basada en datos.
+
+(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística Inferencial)
+
+### 2.	Proponer un algoritmo general que describa cómo se hacen los contrastes de hipótesis a nivel de una población.
+
+1. **Definir hipótesis nula y alternativa y nivel de significancia para el estudio:** Se plantean las dos afirmaciones opuestas sobre el parámetro poblacional ($H_0$ como el estado sin cambios y $H_1$ como el efecto a demostrar) y se fija la probabilidad máxima permitida de equivocarse al rechazar la hipótesis nula ($\alpha$).
+
+2. **Calcular estadísticos de prueba:** Se transforma la información obtenida de los datos muestrales en un único valor estandarizado utilizando una fórmula específica que mide qué tan alejados están los resultados observados de lo que predice la hipótesis nula.
+
+3. **Definir región crítica:** Se delimita el conjunto de valores extremos en la distribución estadística que son tan improbables de ocurrir por azar que, si el estadístico de prueba cae allí, obligan a rechazar la hipótesis nula.
+
+4. **Verificar si el estadístico de prueba cae dentro o no de la región crítica:** Se compara directamente el valor numérico del estadístico calculado con los límites de la región crítica para determinar matemáticamente si se sitúa en la zona de rechazo o en la de no rechazo.
+
+5. **Conclusiones formales:** Se redacta el veredicto final traduciendo la decisión matemática al contexto real del problema, afirmando si existe o no evidencia estadística suficiente para respaldar la hipótesis de la investigación.
+
+(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística Inferencial)
+
+### 3.	Discutir los parámetros que se calculan como parte de este algoritmo.
+
+1. **Media Muestral ($\bar{x}$):** Se calcula para contrastar la media poblacional ($\mu$)
+2. **Cuasivarianza Muestral ($s^2$):** Es el estimador insesgado de la varianza poblacional $\sigma^2$
+3. **Nivel de significación $\alpha$) y nivel de confianza ($1 - \alpha$):** Son parámetros complementarios que regulan el equilibrio entre precisión y seguridad del contraste. El nivel de confianza 1−α representa la probabilidad de que el intervalo de aceptación contenga el verdadero valor poblacional, mientras que α cuantifica el riesgo de cometer un error. La elección de $\alpha$ puede cambiar radicalmente la conclusión del contraste con los mismos datos. Valores habituales (0,90 / 0,95 / 0,99)
+4. **Estadístico de prueba:** Es lo que nos dice cuánto se aleja el valor obtenido en nuestra muestra del valor que suponíamos en $H_0$, expresado en unidades estandarizadas. Según las condiciones del problema se usan las distribuciones como la Normal, para muestras grandes ($n > 30$) o cuando conocemos $\sigma$ de antemano; t sw Student, para muestras pequeñas ($n \le 30$) y $\sigma$ desconocida; entre otras.
+5. **Error Estándar y Tamaño Muestral:** Mide la dispersión esperada de las medias muestrales respecto a la media poblacional, y determina directamente la amplitud del intervalo de aceptación. Es el margen de error que estamos dispuestos a aceptar entre el valor medido en la muestra y el verdadero valor poblacional.
+6. **Intervalo de Aceptación:** Se podría definir como la zona de *no rechazo*. Es el rango de valores dentro del cual es muy probable que caigan los resultados de una muestra si la hipótesis nula ($H_0$) es verdadera.
+7. **Errores de decisión:** Rechazar $H_0$ siendo verdadera (falso positivo). No rechazar $H_0$ siendo falsa (falso negativo).
+
+(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística Inferencial)
+
+### 4.	A continuación, elegir dos escenarios modelo para mostrar cómo puede usarse un contraste de hipótesis para buscar «respuesta» a un «problema» en el estudio de una población. Esos escenarios/problemas deben estar relacionados con situaciones físicas que definas.
+
+- **Escenario 1: ¿El supermercado pesa bien las bolsas de patatas?** Una marca vende bolsas de patatas etiquetadas con 1 kg de peso. Sospechamos que las bolsas pesan menos de lo indicado y decidimos comprobarlo antes de presentar una reclamación.
+
+- **Escenario 2: ¿El autobús llega a su hora?** El horario oficial dice que el autobús de línea tarda una media de 20 minutos en recorrer su ruta. Como viajeros habituales creemos que últimamente tarda más, pero también podría tardar menos por cambios en el tráfico. Decidimos inverstigarlo para saberlo con certeza.
+
+### 5. Los modelos deben contener información como:
+
+#### Escenario 1: ¿El supermercado pesa bien las bolsas de patatas?
+
+- **Planteamiento del problema **
+Una marca vende bolsas de patatas etiquetadas con 1 kg de peso. Un consumidor sospecha sistemáticamente que las bolsas pesan menos de lo indicado y quiere tener argumentos objetivos antes de presentar una reclamación formal ante la autoridad de consumo.
+
+$$H_0: \mu \ge 1000\text{ g} \quad \text{vs.} \quad H_1: \mu < 1000\text{ g}$$
+Estamos ante un problema en el que únicamente nos importa que el el producto no alcance el peso mínimo prometido.
+
+- **Definición del tipo de información que recoger para tener la base de datos apropiada en cada caso. **
+La variable principal es el peso neto de cada bolsa en gramos, descontando el peso del envase. Para ello:
+ - Pesar el envase vacío previamente para descontarlo
+ - Usar siempre la misma báscula calibrada
+ - Registrar cada medición individualmente, nunca agrupada
+
+Para que la muestra sea representativa y el muestreo sea aleatorio simple (MAS) es necesario
+ - Comprar las bolsas en diferentes días de la semana para evitar sesgos de producción
+ - Comprar en diferentes tiendas del mismo distribuidor
+ - Comprar bolsas de diferentes lotes de fabricación (el código de lote aparece en el envase)
+ - Evitar elegir bolsas que visualmente parezcan más o menos llenas
+ 
+ Otros datos a registrar: fecha de compra, número de lote, tienda de compra, temperatura ambiente.
+ 
+ Si aceptamos un error máximo de $E = 10$ g con $95%$ de confianza y estimamos $\sigma \approx 15$ g a partir de experiencia previa:
+
+$$n = \left( \frac{1.96 \cdot 15}{10} \right)^2 = (2.94)^2 \approx 9$$
+
+Aunque 9 es el mínimo teórico, se recomienda recoger al menos 30 para poder usar la distribución normal en lugar de la t de Student, simplificando el análisis.
+
+- **Análisis de cada uno de los estadísticos posibles que analizar y posibles ventajas o desventajas asociadas a su uso (se sugiere se responda a esta cuestión en una tabla).**
+
+| Estadístico | Definición | Ventajas | Desventajas | ¿Cuándo usarlo? |
+|-------------|------------|----------|-------------|-----------------|
+| Media muestral ($\bar{x}$) | Promedio aritmético de los pesos medidos | Estimador insesgado de $\mu$; intuitivo; fácil de calcular | Sensible a valores extremos (outliers) | Siempre; es el estadístico central del contraste |
+| Cuasivarianza ($s^2$) | Dispersión muestral con divisor $n-1$ | Estimador insesgado de $\sigma^2$; necesaria cuando $\sigma$ es desconocida | Menos intuitiva que la desviación típica | Cuando no conocemos $\sigma$ de la población |
+| Desviación típica muestral ($s$) | Raíz cuadrada de $s^2$ | Mismas unidades que los datos (gramos); más interpretable | Estimador ligeramente sesgado de $\sigma$ | Para comunicar la variabilidad de forma intuitiva |
+| Mediana | Valor central de la muestra ordenada | Robusta frente a outliers | Estimador sesgado; no recomendable para inferencia poblacional | Solo como estadístico descriptivo complementario |
+| Rango | Diferencia entre máximo y mínimo | Muy fácil de calcular | Muy sensible a outliers; estimador sesgado | Solo como indicador rápido de dispersión, nunca para inferencia |
+| Error estándar ($\sigma/\sqrt{n}$) | Dispersión esperada de las medias muestrales | Cuantifica la precisión del experimento | Depende de $n$; aumentarlo tiene coste económico | Para calcular el intervalo de aceptación y planificar $n$ |
+| Estadístico $z$ | Valor tipificado para $n \geq 30$ o $\sigma$ conocida | Permite usar tablas estándar $N(0,1)$ | Requiere $n$ grande o $\sigma$ conocida | Muestras grandes ($n \geq 30$) |
+| Estadístico $t$ | Valor tipificado para $n \leq 30$ y $\sigma$ desconocida | Válido para muestras pequeñas | Colas más pesadas; intervalos más amplios; requiere tablas de Student | Muestras pequeñas ($n < 30$) |
+
+- **Presentar los posibles métodos de contraste de hipótesis por utilizar y analizar el impacto de cada uno tomando en cuenta los parámetros a incluir, el coste numérico u otro elemento que consideres relevante a la hora de decidir por una u otra metodología.**
+
+- *Método Normal (muestra grande, $n \geq 30$)*
+Se aplica cuando el consumidor ha reunido al menos 30 bolsas o conoce $\sigma$ de antemano. El estadístico de prueba es:
+
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+
+Unilateral con $\bar{x} = 985\text{ g}$, $\sigma = 12\text{ g}$, y $n = 36$:
+
+$$z = \frac{985 - 1000}{12/\sqrt{36}} = \frac{-15}{2} = -7{,}5$$
+
+El valor crítico para $\alpha = 0{,}05$ unilateral es $z_\alpha = -1{,}645$. Como $-7{,}5 < -1{,}645$, se rechaza $H_0$ con contundencia.
+
+- *Método T de Student (muestra pequeña, $n < 30$)*
+
+Se aplica cuando el consumidor solo ha podido pesar 9 bolsas y no conoce $\sigma$. El estadístico de prueba es:
+
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n-1}}$$
+
+Con $\bar{x} = 985\text{ g}$, $s = 12\text{ g}$, y $n = 9$:
+
+$$t = \frac{985 - 1000}{12/\sqrt{8}} = \frac{-15}{4{,}24} = -3{,}54$$
+
+El valor crítico para $\alpha = 0{,}05$ y $8$ grados de libertad es $t_{\alpha, 8} = -1{,}860$. Como $-3{,}54 < -1{,}860$, se rechaza $H_0$.
+
+#### Escenario 2: ¿El autobús llega a su hora?
+
+- **Planteamiento del problema **
+¿Ha cambiado el tiempo medio del trayecto del autobús? El horario oficial establece que el autobús tarda una media de 20 minutos en recorrer su ruta. Los viajeros habituales perciben que últimamente los tiempos han cambiado, sin saber si para mejor o para peor. Se plantea un contraste bilateral pues la desviación puede ser en cualquier dirección:
+
+$$H_0: \mu = 20\text{ min} \quad \text{vs.} \quad H_1: \mu \neq 20\text{ min}$$
+
+- **Definición del tipo de información que recoger para tener la base de datos apropiada en cada caso. **
+
+La variable principal es el tiempo de trayecto en minutos desde la parada de origen hasta la parada de destino final. Para cada trayecto es necesario registrar:
+
+- Hora exacta de salida de la parada inicial
+- Hora exacta de llegada a la parada final
+- Tiempo neto de trayecto en minutos
+
+Para garantizar un muestreo aleatorio simple (MAS) representativo de la población de trayectos:
+
+- Registrar trayectos en diferentes días de la semana, incluyendo fines de semana
+- Registrar trayectos en diferentes franjas horarias (mañana, mediodía, tarde, noche)
+- Usar siempre el mismo recorrido completo de inicio a fin
+- Emplear un cronómetro o aplicación de registro automático para minimizar el error humano
+- No seleccionar conscientemente los días que parecen más rápidos o más lentos
+
+Otras variables a registrar: día de la semana, franja horaria, condiciones metereológicas, incidencias registradas, conductor asignado.
+
+Con $\sigma = 4\text{ min}$ conocida, un error máximo tolerable $E = 1{,}5\text{ min}$ y una confianza del $95\%$:
+
+$$n = \left( 1{,}96 \cdot \frac{4}{1{,}5} \right)^2 = (5{,}227)^2 \approx 27{,}32 \approx 28\text{ trayectos}$$
+
+Se recomienda redondear por encima de $n = 30$ para usar cómodamente la distribución normal.
+
+
+- **Análisis de cada uno de los estadísticos posibles que analizar y posibles ventajas o desventajas asociadas a su uso (se sugiere se responda a esta cuestión en una tabla).**
+
+| Estadístico | Definición | Ventajas | Desventajas | ¿Cuándo usarlo? |
+|-------------|------------|----------|-------------|-----------------|
+| Media muestral ($\bar{x}$) | Promedio de los tiempos registrados | Estimador insesgado de $\mu$; intuitivo; directamente comparable con los 20 min oficiales | Sensible a valores extremos como días con incidencias graves | Siempre; es el estadístico central del contraste |
+| Cuasivarianza ($s^2$) | Dispersión muestral con divisor $n-1$ | Estimador insesgado de $\sigma^2$; necesaria cuando $\sigma$ poblacional es desconocida | Menos intuitiva que la desviación típica para comunicar resultados | Cuando no se dispone de registros históricos de $\sigma$ |
+| Desviación típica muestral ($s$) | Raíz cuadrada de $s^2$ | Mismas unidades que los datos (minutos); fácil de interpretar | Estimador ligeramente sesgado de $\sigma$ | Para describir la variabilidad del servicio de forma comunicable |
+| Mediana | Valor central de los tiempos ordenados | Robusta frente a días con incidencias excepcionales | Estimador sesgado; no válida para inferencia poblacional | Solo como estadístico descriptivo complementario |
+| Rango | Diferencia entre trayecto más largo y más corto | Muy fácil de calcular e interpretar | Muy sensible a valores extremos; estimador sesgado | Solo como indicador rápido de la dispersión del servicio |
+| Error estándar ($\sigma/\sqrt{n}$) | Precisión de la estimación de la media | Cuantifica directamente la fiabilidad del estudio | Reducirlo requiere más trayectos registrados lo que implica más tiempo | Para definir el intervalo de aceptación y planificar $n$ |
+| Estadístico $z$ | Valor tipificado con $N(0,1)$ para $n \geq 30$ | Cálculo sencillo con tablas estándar; apropiado cuando $\sigma$ es conocida por registros históricos | Requiere $n$ grande o $\sigma$ conocida | Cuando se dispone de registros históricos de la empresa |
+| Estadístico $t$ | Valor tipificado con $t$ de Student para $n < 30$ | Válido con muestras pequeñas y $\sigma$ desconocida | Intervalos más amplios; menos potencia estadística | Cuando solo se pueden registrar pocos trayectos |
+
+- **Presentar los posibles métodos de contraste de hipótesis por utilizar y analizar el impacto de cada uno tomando en cuenta los parámetros a incluir, el coste numérico u otro elemento que consideres relevante a la hora de decidir por una u otra metodología.**
+
+*Contraste Z Bilateral*
+
+Aplicable cuando $n \geq 30$ o $\sigma$ es conocida. 
+
+El estadístico de prueba es:
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+
+La regla de decisión es:
+$$\text{Rechazar } H_0 \text{ si } |z| > z_{\alpha/2}$$
+
+El intervalo de aceptación queda definido como:
+$$\left( \mu_0 - z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \;;\; \mu_0 + z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \right)$$
+
+
+
+*Contraste Z Unilateral*
+
+Mismo contexto que el método anterior ($n \geq 30$ o $\sigma$ conocida).
+
+El estadístico de prueba es el mismo:
+$$z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}$$
+
+La regla de decisión cambia según la dirección del contraste:
+* **Cola derecha:** Rechazar $H_0$ si $z > z_{\alpha}$
+* **Cola izquierda:** Rechazar $H_0$ si $z < -z_{\alpha}$
+
+La región de aceptación para el caso de cola derecha es:
+$$\left( -\infty \;;\; \mu_0 + z_{\alpha}\frac{\sigma}{\sqrt{n}} \right)$$
+
+
+
+*Contraste $t$ de Student*
+
+Aplicable cuando $n < 30$ y $\sigma$ es desconocida.
+
+El estadístico de prueba es:
+$$t = \frac{\bar{x} - \mu_0}{s / \sqrt{n-1}}$$
+
+Este estadístico sigue una distribución $t$ con $n-1$ grados de libertad. La regla de decisión bilateral es:
+$$\text{Rechazar } H_0 \text{ si } |t| > t_{\alpha/2,\, n-1}$$
+
+El intervalo de aceptación queda definido como:
+$$\left( \mu_0 - t_{\alpha/2,\,n-1}\frac{s}{\sqrt{n-1}} \;;\; \mu_0 + t_{\alpha/2,\,n-1}\frac{s}{\sqrt{n-1}} \right)$$
+
+### 6. Indica claramente qué tipo de conclusiones esperas obtener en cada uno de los escenarios planteados.
+
+#### Escenario 1: ¿El supermercado pesa bien las bolsas de patatas?
+
+El análisi llevará a uno de estos escenarios:
+
+- Si se rechaza $H_0$ (Sospecha confirmada): Se demuestra estadísticamente que el peso medio es menor a 1 kg. La diferencia no es por azar, sino un defecto sistemático. Conclusión: El consumidor tiene pruebas objetivas y sólidas para presentar la reclamación por fraude.
+
+- Si NO se rechaza $H_0$ (Sin pruebas suficientes): El peso medio cumple legalmente con lo etiquetado. Las bolsas que pesan menos entran dentro de la tolerancia normal del proceso. Conclusión: El consumidor debe desistir de la reclamación, ya que no hay base legal.
+
+Conclusiones metodológicas:
+
+- Sobre el tamaño de la muestra: Si se usaron $\ge 30$ bolsas, la conclusión es muy robusta y difícil de refutar. Si se usaron 9 bolsas, el resultado es válido pero metodológicamente más débil ante una réplica del supermercado.
+
+- Sobre el origen de los datos: Al diversificar tiendas, días y lotes, se concluye si el problema es un defecto general de la marca y no un fallo aislado de un solo repartidor o de un lote específico.
+
+Conclusión práctica para el usuario:
+
+- El método t de Student con 9 bolsas es suficiente para cambiar de marca y permite una reclamación informal al supermercado
+- A nivel de reclamación formal ante organismos de consumo conviene ampliar la muestra a $n \geq 30$ usando el método de la normal para ofrecer una evidencia más robusta y difícil de rebatir por parte del fabricante
+
+#### Escenario 2: ¿El autobús llega a su hora?
+
+El análisis llevará a uno de estos escenarios:
+
+- Si se rechaza $H_0$ (Sospecha confirmada): Se demuestra estadísticamente que el tiempo medio de trayecto supera los 20 minutos oficiales. La desviación no es atribuible al azar sino a un incumplimiento sistemático del horario. Conclusión: los viajeros tienen pruebas objetivas y sólidas para presentar una reclamación formal por incumplimiento del contrato de servicio.
+
+- Si NO se rechaza $H_0$ (Sin pruebas suficientes): El tiempo medio cumple con el horario oficial declarado. Los trayectos que ocasionalmente superan los 20 minutos entran dentro de la variabilidad normal del servicio. Conclusión: los viajeros deben desistir de la reclamación, ya que no hay base estadística suficiente para sostenerla.
+
+Conclusiones Metodológicas
+
+- Sobre el tamaño de la muestra: si se registraron $n \geq 30$ trayectos, la conclusión es muy robusta y difícil de rebatir por la empresa. Si se usaron solo 15 trayectos, el resultado es válido para una decisión personal pero metodológicamente más débil ante una posible réplica de la empresa de transporte, como muestra el hecho de que el método t con $n = 15$ no llega a rechazar $H_0$ con los mismos datos.
+
+- Sobre el origen de los datos: al diversificar días de la semana, franjas horarias y condiciones meteorológicas, se puede concluir si el problema es un defecto general y permanente del servicio y no un fallo puntual asociado a un conductor concreto, a una época del año o a una circunstancia excepcional de tráfico.
+
+Conclusión Práctica para el Usuario
+
+- El método t de Student con 15 trayectos es suficiente para tomar una decisión personal de buscar alternativas de transporte y permite una queja informal al servicio de atención al cliente de la empresa.
+
+- A nivel de reclamación formal ante organismos reguladores conviene ampliar la muestra a $n \geq 30$
+usando el método Z unilateral para ofrecer una evidencia más robusta y difícil de rebatir, demostrando específicamente que el tiempo medio supera el límite contractual de 20 minutos de forma sistemática y no ocasional.

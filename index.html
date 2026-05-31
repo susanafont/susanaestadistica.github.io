@@ -16,7 +16,7 @@
 <script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/cerulean.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
@@ -268,7 +268,606 @@ $(document).ready(function () {
 </div>
 
 
-<p>Hello, Website!</p>
+<div id="ejercicio" class="section level2">
+<h2>Ejercicio</h2>
+<div
+id="una-breve-descripción-sobre-qué-son-y-para-qué-se-utilizan-los-contrastes-de-hipótesis-puedesdebes-citar-la-literatura-pertinente."
+class="section level3">
+<h3>1. Una breve descripción sobre qué son y para qué se utilizan los
+«contrastes de hipótesis» (puedes/debes citar la literatura
+pertinente).</h3>
+<p>Un contraste de hipótesis es una herramienta de la estadística
+inferencial. Su objetivo es evaluar si los datos de una muestra
+proporcionan suficiente evidencia para rechazar o no una afirmación
+inicial sobre un parámetro poblacional.</p>
+<p>Los contrastes de hipótesis son el mecanismo formal mediante el cual
+la estadística inferencial convierte datos de una muestra en decisiones
+razonadas sobre la realidad, cuantificando siempre el grado de certeza
+asociado a esas decisiones.</p>
+<p>Los contrastes de hipótesis son el motor de la investigación
+científica y la toma de decisiones basada en datos.</p>
+<p>(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística
+Inferencial)</p>
+</div>
+<div
+id="proponer-un-algoritmo-general-que-describa-cómo-se-hacen-los-contrastes-de-hipótesis-a-nivel-de-una-población."
+class="section level3">
+<h3>2. Proponer un algoritmo general que describa cómo se hacen los
+contrastes de hipótesis a nivel de una población.</h3>
+<ol style="list-style-type: decimal">
+<li><p><strong>Definir hipótesis nula y alternativa y nivel de
+significancia para el estudio:</strong> Se plantean las dos afirmaciones
+opuestas sobre el parámetro poblacional (<span
+class="math inline">\(H_0\)</span> como el estado sin cambios y <span
+class="math inline">\(H_1\)</span> como el efecto a demostrar) y se fija
+la probabilidad máxima permitida de equivocarse al rechazar la hipótesis
+nula (<span class="math inline">\(\alpha\)</span>).</p></li>
+<li><p><strong>Calcular estadísticos de prueba:</strong> Se transforma
+la información obtenida de los datos muestrales en un único valor
+estandarizado utilizando una fórmula específica que mide qué tan
+alejados están los resultados observados de lo que predice la hipótesis
+nula.</p></li>
+<li><p><strong>Definir región crítica:</strong> Se delimita el conjunto
+de valores extremos en la distribución estadística que son tan
+improbables de ocurrir por azar que, si el estadístico de prueba cae
+allí, obligan a rechazar la hipótesis nula.</p></li>
+<li><p><strong>Verificar si el estadístico de prueba cae dentro o no de
+la región crítica:</strong> Se compara directamente el valor numérico
+del estadístico calculado con los límites de la región crítica para
+determinar matemáticamente si se sitúa en la zona de rechazo o en la de
+no rechazo.</p></li>
+<li><p><strong>Conclusiones formales:</strong> Se redacta el veredicto
+final traduciendo la decisión matemática al contexto real del problema,
+afirmando si existe o no evidencia estadística suficiente para respaldar
+la hipótesis de la investigación.</p></li>
+</ol>
+<p>(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística
+Inferencial)</p>
+</div>
+<div
+id="discutir-los-parámetros-que-se-calculan-como-parte-de-este-algoritmo."
+class="section level3">
+<h3>3. Discutir los parámetros que se calculan como parte de este
+algoritmo.</h3>
+<ol style="list-style-type: decimal">
+<li><strong>Media Muestral (<span
+class="math inline">\(\bar{x}\)</span>):</strong> Se calcula para
+contrastar la media poblacional (<span
+class="math inline">\(\mu\)</span>)</li>
+<li><strong>Cuasivarianza Muestral (<span
+class="math inline">\(s^2\)</span>):</strong> Es el estimador insesgado
+de la varianza poblacional <span
+class="math inline">\(\sigma^2\)</span></li>
+<li><strong>Nivel de significación <span
+class="math inline">\(\alpha\)</span>) y nivel de confianza (<span
+class="math inline">\(1 - \alpha\)</span>):</strong> Son parámetros
+complementarios que regulan el equilibrio entre precisión y seguridad
+del contraste. El nivel de confianza 1−α representa la probabilidad de
+que el intervalo de aceptación contenga el verdadero valor poblacional,
+mientras que α cuantifica el riesgo de cometer un error. La elección de
+<span class="math inline">\(\alpha\)</span> puede cambiar radicalmente
+la conclusión del contraste con los mismos datos. Valores habituales
+(0,90 / 0,95 / 0,99)</li>
+<li><strong>Estadístico de prueba:</strong> Es lo que nos dice cuánto se
+aleja el valor obtenido en nuestra muestra del valor que suponíamos en
+<span class="math inline">\(H_0\)</span>, expresado en unidades
+estandarizadas. Según las condiciones del problema se usan las
+distribuciones como la Normal, para muestras grandes (<span
+class="math inline">\(n &gt; 30\)</span>) o cuando conocemos <span
+class="math inline">\(\sigma\)</span> de antemano; t sw Student, para
+muestras pequeñas (<span class="math inline">\(n \le 30\)</span>) y
+<span class="math inline">\(\sigma\)</span> desconocida; entre
+otras.</li>
+<li><strong>Error Estándar y Tamaño Muestral:</strong> Mide la
+dispersión esperada de las medias muestrales respecto a la media
+poblacional, y determina directamente la amplitud del intervalo de
+aceptación. Es el margen de error que estamos dispuestos a aceptar entre
+el valor medido en la muestra y el verdadero valor poblacional.</li>
+<li><strong>Intervalo de Aceptación:</strong> Se podría definir como la
+zona de <em>no rechazo</em>. Es el rango de valores dentro del cual es
+muy probable que caigan los resultados de una muestra si la hipótesis
+nula (<span class="math inline">\(H_0\)</span>) es verdadera.</li>
+<li><strong>Errores de decisión:</strong> Rechazar <span
+class="math inline">\(H_0\)</span> siendo verdadera (falso positivo). No
+rechazar <span class="math inline">\(H_0\)</span> siendo falsa (falso
+negativo).</li>
+</ol>
+<p>(Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística
+Inferencial)</p>
+</div>
+<div
+id="a-continuación-elegir-dos-escenarios-modelo-para-mostrar-cómo-puede-usarse-un-contraste-de-hipótesis-para-buscar-respuesta-a-un-problema-en-el-estudio-de-una-población.-esos-escenariosproblemas-deben-estar-relacionados-con-situaciones-físicas-que-definas."
+class="section level3">
+<h3>4. A continuación, elegir dos escenarios modelo para mostrar cómo
+puede usarse un contraste de hipótesis para buscar «respuesta» a un
+«problema» en el estudio de una población. Esos escenarios/problemas
+deben estar relacionados con situaciones físicas que definas.</h3>
+<ul>
+<li><p><strong>Escenario 1: ¿El supermercado pesa bien las bolsas de
+patatas?</strong> Una marca vende bolsas de patatas etiquetadas con 1 kg
+de peso. Sospechamos que las bolsas pesan menos de lo indicado y
+decidimos comprobarlo antes de presentar una reclamación.</p></li>
+<li><p><strong>Escenario 2: ¿El autobús llega a su hora?</strong> El
+horario oficial dice que el autobús de línea tarda una media de 20
+minutos en recorrer su ruta. Como viajeros habituales creemos que
+últimamente tarda más, pero también podría tardar menos por cambios en
+el tráfico. Decidimos inverstigarlo para saberlo con certeza.</p></li>
+</ul>
+</div>
+<div id="los-modelos-deben-contener-información-como"
+class="section level3">
+<h3>5. Los modelos deben contener información como:</h3>
+<div id="escenario-1-el-supermercado-pesa-bien-las-bolsas-de-patatas"
+class="section level4">
+<h4>Escenario 1: ¿El supermercado pesa bien las bolsas de patatas?</h4>
+<ul>
+<li><strong>Planteamiento del problema </strong> Una marca vende bolsas
+de patatas etiquetadas con 1 kg de peso. Un consumidor sospecha
+sistemáticamente que las bolsas pesan menos de lo indicado y quiere
+tener argumentos objetivos antes de presentar una reclamación formal
+ante la autoridad de consumo.</li>
+</ul>
+<p><span class="math display">\[H_0: \mu \ge 1000\text{ g} \quad
+\text{vs.} \quad H_1: \mu &lt; 1000\text{ g}\]</span> Estamos ante un
+problema en el que únicamente nos importa que el el producto no alcance
+el peso mínimo prometido.</p>
+<ul>
+<li><strong>Definición del tipo de información que recoger para tener la
+base de datos apropiada en cada caso. </strong> La variable principal es
+el peso neto de cada bolsa en gramos, descontando el peso del envase.
+Para ello:</li>
+<li>Pesar el envase vacío previamente para descontarlo</li>
+<li>Usar siempre la misma báscula calibrada</li>
+<li>Registrar cada medición individualmente, nunca agrupada</li>
+</ul>
+<p>Para que la muestra sea representativa y el muestreo sea aleatorio
+simple (MAS) es necesario - Comprar las bolsas en diferentes días de la
+semana para evitar sesgos de producción - Comprar en diferentes tiendas
+del mismo distribuidor - Comprar bolsas de diferentes lotes de
+fabricación (el código de lote aparece en el envase) - Evitar elegir
+bolsas que visualmente parezcan más o menos llenas</p>
+<p>Otros datos a registrar: fecha de compra, número de lote, tienda de
+compra, temperatura ambiente.</p>
+<p>Si aceptamos un error máximo de <span class="math inline">\(E =
+10\)</span> g con <span class="math inline">\(95%\)</span> de confianza
+y estimamos <span class="math inline">\(\sigma \approx 15\)</span> g a
+partir de experiencia previa:</p>
+<p><span class="math display">\[n = \left( \frac{1.96 \cdot 15}{10}
+\right)^2 = (2.94)^2 \approx 9\]</span></p>
+<p>Aunque 9 es el mínimo teórico, se recomienda recoger al menos 30 para
+poder usar la distribución normal en lugar de la t de Student,
+simplificando el análisis.</p>
+<ul>
+<li><strong>Análisis de cada uno de los estadísticos posibles que
+analizar y posibles ventajas o desventajas asociadas a su uso (se
+sugiere se responda a esta cuestión en una tabla).</strong></li>
+</ul>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="15%" />
+<col width="20%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estadístico</th>
+<th>Definición</th>
+<th>Ventajas</th>
+<th>Desventajas</th>
+<th>¿Cuándo usarlo?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Media muestral (<span class="math inline">\(\bar{x}\)</span>)</td>
+<td>Promedio aritmético de los pesos medidos</td>
+<td>Estimador insesgado de <span class="math inline">\(\mu\)</span>;
+intuitivo; fácil de calcular</td>
+<td>Sensible a valores extremos (outliers)</td>
+<td>Siempre; es el estadístico central del contraste</td>
+</tr>
+<tr class="even">
+<td>Cuasivarianza (<span class="math inline">\(s^2\)</span>)</td>
+<td>Dispersión muestral con divisor <span
+class="math inline">\(n-1\)</span></td>
+<td>Estimador insesgado de <span
+class="math inline">\(\sigma^2\)</span>; necesaria cuando <span
+class="math inline">\(\sigma\)</span> es desconocida</td>
+<td>Menos intuitiva que la desviación típica</td>
+<td>Cuando no conocemos <span class="math inline">\(\sigma\)</span> de
+la población</td>
+</tr>
+<tr class="odd">
+<td>Desviación típica muestral (<span
+class="math inline">\(s\)</span>)</td>
+<td>Raíz cuadrada de <span class="math inline">\(s^2\)</span></td>
+<td>Mismas unidades que los datos (gramos); más interpretable</td>
+<td>Estimador ligeramente sesgado de <span
+class="math inline">\(\sigma\)</span></td>
+<td>Para comunicar la variabilidad de forma intuitiva</td>
+</tr>
+<tr class="even">
+<td>Mediana</td>
+<td>Valor central de la muestra ordenada</td>
+<td>Robusta frente a outliers</td>
+<td>Estimador sesgado; no recomendable para inferencia poblacional</td>
+<td>Solo como estadístico descriptivo complementario</td>
+</tr>
+<tr class="odd">
+<td>Rango</td>
+<td>Diferencia entre máximo y mínimo</td>
+<td>Muy fácil de calcular</td>
+<td>Muy sensible a outliers; estimador sesgado</td>
+<td>Solo como indicador rápido de dispersión, nunca para inferencia</td>
+</tr>
+<tr class="even">
+<td>Error estándar (<span
+class="math inline">\(\sigma/\sqrt{n}\)</span>)</td>
+<td>Dispersión esperada de las medias muestrales</td>
+<td>Cuantifica la precisión del experimento</td>
+<td>Depende de <span class="math inline">\(n\)</span>; aumentarlo tiene
+coste económico</td>
+<td>Para calcular el intervalo de aceptación y planificar <span
+class="math inline">\(n\)</span></td>
+</tr>
+<tr class="odd">
+<td>Estadístico <span class="math inline">\(z\)</span></td>
+<td>Valor tipificado para <span class="math inline">\(n \geq 30\)</span>
+o <span class="math inline">\(\sigma\)</span> conocida</td>
+<td>Permite usar tablas estándar <span
+class="math inline">\(N(0,1)\)</span></td>
+<td>Requiere <span class="math inline">\(n\)</span> grande o <span
+class="math inline">\(\sigma\)</span> conocida</td>
+<td>Muestras grandes (<span class="math inline">\(n \geq
+30\)</span>)</td>
+</tr>
+<tr class="even">
+<td>Estadístico <span class="math inline">\(t\)</span></td>
+<td>Valor tipificado para <span class="math inline">\(n \leq 30\)</span>
+y <span class="math inline">\(\sigma\)</span> desconocida</td>
+<td>Válido para muestras pequeñas</td>
+<td>Colas más pesadas; intervalos más amplios; requiere tablas de
+Student</td>
+<td>Muestras pequeñas (<span class="math inline">\(n &lt;
+30\)</span>)</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p><strong>Presentar los posibles métodos de contraste de hipótesis
+por utilizar y analizar el impacto de cada uno tomando en cuenta los
+parámetros a incluir, el coste numérico u otro elemento que consideres
+relevante a la hora de decidir por una u otra
+metodología.</strong></p></li>
+<li><p><em>Método Normal (muestra grande, <span class="math inline">\(n
+\geq 30\)</span>)</em> Se aplica cuando el consumidor ha reunido al
+menos 30 bolsas o conoce <span class="math inline">\(\sigma\)</span> de
+antemano. El estadístico de prueba es:</p></li>
+</ul>
+<p><span class="math display">\[z = \frac{\bar{x} - \mu_0}{\sigma /
+\sqrt{n}}\]</span></p>
+<p>Unilateral con <span class="math inline">\(\bar{x} = 985\text{
+g}\)</span>, <span class="math inline">\(\sigma = 12\text{ g}\)</span>,
+y <span class="math inline">\(n = 36\)</span>:</p>
+<p><span class="math display">\[z = \frac{985 - 1000}{12/\sqrt{36}} =
+\frac{-15}{2} = -7{,}5\]</span></p>
+<p>El valor crítico para <span class="math inline">\(\alpha =
+0{,}05\)</span> unilateral es <span class="math inline">\(z_\alpha =
+-1{,}645\)</span>. Como <span class="math inline">\(-7{,}5 &lt;
+-1{,}645\)</span>, se rechaza <span class="math inline">\(H_0\)</span>
+con contundencia.</p>
+<ul>
+<li><em>Método T de Student (muestra pequeña, <span
+class="math inline">\(n &lt; 30\)</span>)</em></li>
+</ul>
+<p>Se aplica cuando el consumidor solo ha podido pesar 9 bolsas y no
+conoce <span class="math inline">\(\sigma\)</span>. El estadístico de
+prueba es:</p>
+<p><span class="math display">\[t = \frac{\bar{x} - \mu_0}{s /
+\sqrt{n-1}}\]</span></p>
+<p>Con <span class="math inline">\(\bar{x} = 985\text{ g}\)</span>,
+<span class="math inline">\(s = 12\text{ g}\)</span>, y <span
+class="math inline">\(n = 9\)</span>:</p>
+<p><span class="math display">\[t = \frac{985 - 1000}{12/\sqrt{8}} =
+\frac{-15}{4{,}24} = -3{,}54\]</span></p>
+<p>El valor crítico para <span class="math inline">\(\alpha =
+0{,}05\)</span> y <span class="math inline">\(8\)</span> grados de
+libertad es <span class="math inline">\(t_{\alpha, 8} =
+-1{,}860\)</span>. Como <span class="math inline">\(-3{,}54 &lt;
+-1{,}860\)</span>, se rechaza <span
+class="math inline">\(H_0\)</span>.</p>
+</div>
+<div id="escenario-2-el-autobús-llega-a-su-hora" class="section level4">
+<h4>Escenario 2: ¿El autobús llega a su hora?</h4>
+<ul>
+<li><strong>Planteamiento del problema </strong> ¿Ha cambiado el tiempo
+medio del trayecto del autobús? El horario oficial establece que el
+autobús tarda una media de 20 minutos en recorrer su ruta. Los viajeros
+habituales perciben que últimamente los tiempos han cambiado, sin saber
+si para mejor o para peor. Se plantea un contraste bilateral pues la
+desviación puede ser en cualquier dirección:</li>
+</ul>
+<p><span class="math display">\[H_0: \mu = 20\text{ min} \quad
+\text{vs.} \quad H_1: \mu \neq 20\text{ min}\]</span></p>
+<ul>
+<li><strong>Definición del tipo de información que recoger para tener la
+base de datos apropiada en cada caso. </strong></li>
+</ul>
+<p>La variable principal es el tiempo de trayecto en minutos desde la
+parada de origen hasta la parada de destino final. Para cada trayecto es
+necesario registrar:</p>
+<ul>
+<li>Hora exacta de salida de la parada inicial</li>
+<li>Hora exacta de llegada a la parada final</li>
+<li>Tiempo neto de trayecto en minutos</li>
+</ul>
+<p>Para garantizar un muestreo aleatorio simple (MAS) representativo de
+la población de trayectos:</p>
+<ul>
+<li>Registrar trayectos en diferentes días de la semana, incluyendo
+fines de semana</li>
+<li>Registrar trayectos en diferentes franjas horarias (mañana,
+mediodía, tarde, noche)</li>
+<li>Usar siempre el mismo recorrido completo de inicio a fin</li>
+<li>Emplear un cronómetro o aplicación de registro automático para
+minimizar el error humano</li>
+<li>No seleccionar conscientemente los días que parecen más rápidos o
+más lentos</li>
+</ul>
+<p>Otras variables a registrar: día de la semana, franja horaria,
+condiciones metereológicas, incidencias registradas, conductor
+asignado.</p>
+<p>Con <span class="math inline">\(\sigma = 4\text{ min}\)</span>
+conocida, un error máximo tolerable <span class="math inline">\(E =
+1{,}5\text{ min}\)</span> y una confianza del <span
+class="math inline">\(95\%\)</span>:</p>
+<p><span class="math display">\[n = \left( 1{,}96 \cdot \frac{4}{1{,}5}
+\right)^2 = (5{,}227)^2 \approx 27{,}32 \approx 28\text{
+trayectos}\]</span></p>
+<p>Se recomienda redondear por encima de <span class="math inline">\(n =
+30\)</span> para usar cómodamente la distribución normal.</p>
+<ul>
+<li><strong>Análisis de cada uno de los estadísticos posibles que
+analizar y posibles ventajas o desventajas asociadas a su uso (se
+sugiere se responda a esta cuestión en una tabla).</strong></li>
+</ul>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="18%" />
+<col width="15%" />
+<col width="20%" />
+<col width="26%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Estadístico</th>
+<th>Definición</th>
+<th>Ventajas</th>
+<th>Desventajas</th>
+<th>¿Cuándo usarlo?</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Media muestral (<span class="math inline">\(\bar{x}\)</span>)</td>
+<td>Promedio de los tiempos registrados</td>
+<td>Estimador insesgado de <span class="math inline">\(\mu\)</span>;
+intuitivo; directamente comparable con los 20 min oficiales</td>
+<td>Sensible a valores extremos como días con incidencias graves</td>
+<td>Siempre; es el estadístico central del contraste</td>
+</tr>
+<tr class="even">
+<td>Cuasivarianza (<span class="math inline">\(s^2\)</span>)</td>
+<td>Dispersión muestral con divisor <span
+class="math inline">\(n-1\)</span></td>
+<td>Estimador insesgado de <span
+class="math inline">\(\sigma^2\)</span>; necesaria cuando <span
+class="math inline">\(\sigma\)</span> poblacional es desconocida</td>
+<td>Menos intuitiva que la desviación típica para comunicar
+resultados</td>
+<td>Cuando no se dispone de registros históricos de <span
+class="math inline">\(\sigma\)</span></td>
+</tr>
+<tr class="odd">
+<td>Desviación típica muestral (<span
+class="math inline">\(s\)</span>)</td>
+<td>Raíz cuadrada de <span class="math inline">\(s^2\)</span></td>
+<td>Mismas unidades que los datos (minutos); fácil de interpretar</td>
+<td>Estimador ligeramente sesgado de <span
+class="math inline">\(\sigma\)</span></td>
+<td>Para describir la variabilidad del servicio de forma
+comunicable</td>
+</tr>
+<tr class="even">
+<td>Mediana</td>
+<td>Valor central de los tiempos ordenados</td>
+<td>Robusta frente a días con incidencias excepcionales</td>
+<td>Estimador sesgado; no válida para inferencia poblacional</td>
+<td>Solo como estadístico descriptivo complementario</td>
+</tr>
+<tr class="odd">
+<td>Rango</td>
+<td>Diferencia entre trayecto más largo y más corto</td>
+<td>Muy fácil de calcular e interpretar</td>
+<td>Muy sensible a valores extremos; estimador sesgado</td>
+<td>Solo como indicador rápido de la dispersión del servicio</td>
+</tr>
+<tr class="even">
+<td>Error estándar (<span
+class="math inline">\(\sigma/\sqrt{n}\)</span>)</td>
+<td>Precisión de la estimación de la media</td>
+<td>Cuantifica directamente la fiabilidad del estudio</td>
+<td>Reducirlo requiere más trayectos registrados lo que implica más
+tiempo</td>
+<td>Para definir el intervalo de aceptación y planificar <span
+class="math inline">\(n\)</span></td>
+</tr>
+<tr class="odd">
+<td>Estadístico <span class="math inline">\(z\)</span></td>
+<td>Valor tipificado con <span class="math inline">\(N(0,1)\)</span>
+para <span class="math inline">\(n \geq 30\)</span></td>
+<td>Cálculo sencillo con tablas estándar; apropiado cuando <span
+class="math inline">\(\sigma\)</span> es conocida por registros
+históricos</td>
+<td>Requiere <span class="math inline">\(n\)</span> grande o <span
+class="math inline">\(\sigma\)</span> conocida</td>
+<td>Cuando se dispone de registros históricos de la empresa</td>
+</tr>
+<tr class="even">
+<td>Estadístico <span class="math inline">\(t\)</span></td>
+<td>Valor tipificado con <span class="math inline">\(t\)</span> de
+Student para <span class="math inline">\(n &lt; 30\)</span></td>
+<td>Válido con muestras pequeñas y <span
+class="math inline">\(\sigma\)</span> desconocida</td>
+<td>Intervalos más amplios; menos potencia estadística</td>
+<td>Cuando solo se pueden registrar pocos trayectos</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Presentar los posibles métodos de contraste de hipótesis por
+utilizar y analizar el impacto de cada uno tomando en cuenta los
+parámetros a incluir, el coste numérico u otro elemento que consideres
+relevante a la hora de decidir por una u otra metodología.</strong></li>
+</ul>
+<p><em>Contraste Z Bilateral</em></p>
+<p>Aplicable cuando <span class="math inline">\(n \geq 30\)</span> o
+<span class="math inline">\(\sigma\)</span> es conocida.</p>
+<p>El estadístico de prueba es: <span class="math display">\[z =
+\frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}\]</span></p>
+<p>La regla de decisión es: <span class="math display">\[\text{Rechazar
+} H_0 \text{ si } |z| &gt; z_{\alpha/2}\]</span></p>
+<p>El intervalo de aceptación queda definido como: <span
+class="math display">\[\left( \mu_0 -
+z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \;;\; \mu_0 +
+z_{\alpha/2}\frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<p><em>Contraste Z Unilateral</em></p>
+<p>Mismo contexto que el método anterior (<span class="math inline">\(n
+\geq 30\)</span> o <span class="math inline">\(\sigma\)</span>
+conocida).</p>
+<p>El estadístico de prueba es el mismo: <span class="math display">\[z
+= \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}\]</span></p>
+<p>La regla de decisión cambia según la dirección del contraste: *
+<strong>Cola derecha:</strong> Rechazar <span
+class="math inline">\(H_0\)</span> si <span class="math inline">\(z &gt;
+z_{\alpha}\)</span> * <strong>Cola izquierda:</strong> Rechazar <span
+class="math inline">\(H_0\)</span> si <span class="math inline">\(z &lt;
+-z_{\alpha}\)</span></p>
+<p>La región de aceptación para el caso de cola derecha es: <span
+class="math display">\[\left( -\infty \;;\; \mu_0 +
+z_{\alpha}\frac{\sigma}{\sqrt{n}} \right)\]</span></p>
+<p><em>Contraste <span class="math inline">\(t\)</span> de
+Student</em></p>
+<p>Aplicable cuando <span class="math inline">\(n &lt; 30\)</span> y
+<span class="math inline">\(\sigma\)</span> es desconocida.</p>
+<p>El estadístico de prueba es: <span class="math display">\[t =
+\frac{\bar{x} - \mu_0}{s / \sqrt{n-1}}\]</span></p>
+<p>Este estadístico sigue una distribución <span
+class="math inline">\(t\)</span> con <span
+class="math inline">\(n-1\)</span> grados de libertad. La regla de
+decisión bilateral es: <span class="math display">\[\text{Rechazar } H_0
+\text{ si } |t| &gt; t_{\alpha/2,\, n-1}\]</span></p>
+<p>El intervalo de aceptación queda definido como: <span
+class="math display">\[\left( \mu_0 -
+t_{\alpha/2,\,n-1}\frac{s}{\sqrt{n-1}} \;;\; \mu_0 +
+t_{\alpha/2,\,n-1}\frac{s}{\sqrt{n-1}} \right)\]</span></p>
+</div>
+</div>
+<div
+id="indica-claramente-qué-tipo-de-conclusiones-esperas-obtener-en-cada-uno-de-los-escenarios-planteados."
+class="section level3">
+<h3>6. Indica claramente qué tipo de conclusiones esperas obtener en
+cada uno de los escenarios planteados.</h3>
+<div id="escenario-1-el-supermercado-pesa-bien-las-bolsas-de-patatas-1"
+class="section level4">
+<h4>Escenario 1: ¿El supermercado pesa bien las bolsas de patatas?</h4>
+<p>El análisi llevará a uno de estos escenarios:</p>
+<ul>
+<li><p>Si se rechaza <span class="math inline">\(H_0\)</span> (Sospecha
+confirmada): Se demuestra estadísticamente que el peso medio es menor a
+1 kg. La diferencia no es por azar, sino un defecto sistemático.
+Conclusión: El consumidor tiene pruebas objetivas y sólidas para
+presentar la reclamación por fraude.</p></li>
+<li><p>Si NO se rechaza <span class="math inline">\(H_0\)</span> (Sin
+pruebas suficientes): El peso medio cumple legalmente con lo etiquetado.
+Las bolsas que pesan menos entran dentro de la tolerancia normal del
+proceso. Conclusión: El consumidor debe desistir de la reclamación, ya
+que no hay base legal.</p></li>
+</ul>
+<p>Conclusiones metodológicas:</p>
+<ul>
+<li><p>Sobre el tamaño de la muestra: Si se usaron <span
+class="math inline">\(\ge 30\)</span> bolsas, la conclusión es muy
+robusta y difícil de refutar. Si se usaron 9 bolsas, el resultado es
+válido pero metodológicamente más débil ante una réplica del
+supermercado.</p></li>
+<li><p>Sobre el origen de los datos: Al diversificar tiendas, días y
+lotes, se concluye si el problema es un defecto general de la marca y no
+un fallo aislado de un solo repartidor o de un lote específico.</p></li>
+</ul>
+<p>Conclusión práctica para el usuario:</p>
+<ul>
+<li>El método t de Student con 9 bolsas es suficiente para cambiar de
+marca y permite una reclamación informal al supermercado</li>
+<li>A nivel de reclamación formal ante organismos de consumo conviene
+ampliar la muestra a <span class="math inline">\(n \geq 30\)</span>
+usando el método de la normal para ofrecer una evidencia más robusta y
+difícil de rebatir por parte del fabricante</li>
+</ul>
+</div>
+<div id="escenario-2-el-autobús-llega-a-su-hora-1"
+class="section level4">
+<h4>Escenario 2: ¿El autobús llega a su hora?</h4>
+<p>El análisis llevará a uno de estos escenarios:</p>
+<ul>
+<li><p>Si se rechaza <span class="math inline">\(H_0\)</span> (Sospecha
+confirmada): Se demuestra estadísticamente que el tiempo medio de
+trayecto supera los 20 minutos oficiales. La desviación no es atribuible
+al azar sino a un incumplimiento sistemático del horario. Conclusión:
+los viajeros tienen pruebas objetivas y sólidas para presentar una
+reclamación formal por incumplimiento del contrato de servicio.</p></li>
+<li><p>Si NO se rechaza <span class="math inline">\(H_0\)</span> (Sin
+pruebas suficientes): El tiempo medio cumple con el horario oficial
+declarado. Los trayectos que ocasionalmente superan los 20 minutos
+entran dentro de la variabilidad normal del servicio. Conclusión: los
+viajeros deben desistir de la reclamación, ya que no hay base
+estadística suficiente para sostenerla.</p></li>
+</ul>
+<p>Conclusiones Metodológicas</p>
+<ul>
+<li><p>Sobre el tamaño de la muestra: si se registraron <span
+class="math inline">\(n \geq 30\)</span> trayectos, la conclusión es muy
+robusta y difícil de rebatir por la empresa. Si se usaron solo 15
+trayectos, el resultado es válido para una decisión personal pero
+metodológicamente más débil ante una posible réplica de la empresa de
+transporte, como muestra el hecho de que el método t con <span
+class="math inline">\(n = 15\)</span> no llega a rechazar <span
+class="math inline">\(H_0\)</span> con los mismos datos.</p></li>
+<li><p>Sobre el origen de los datos: al diversificar días de la semana,
+franjas horarias y condiciones meteorológicas, se puede concluir si el
+problema es un defecto general y permanente del servicio y no un fallo
+puntual asociado a un conductor concreto, a una época del año o a una
+circunstancia excepcional de tráfico.</p></li>
+</ul>
+<p>Conclusión Práctica para el Usuario</p>
+<ul>
+<li><p>El método t de Student con 15 trayectos es suficiente para tomar
+una decisión personal de buscar alternativas de transporte y permite una
+queja informal al servicio de atención al cliente de la
+empresa.</p></li>
+<li><p>A nivel de reclamación formal ante organismos reguladores
+conviene ampliar la muestra a <span class="math inline">\(n \geq
+30\)</span> usando el método Z unilateral para ofrecer una evidencia más
+robusta y difícil de rebatir, demostrando específicamente que el tiempo
+medio supera el límite contractual de 20 minutos de forma sistemática y
+no ocasional.</p></li>
+</ul>
+</div>
+</div>
+</div>
 
 
 

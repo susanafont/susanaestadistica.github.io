@@ -2,4 +2,9 @@
 title: "Bibliografía"
 ---
 
-More about this website.
+- Estadística útil. (2018, 19 de febrero). Creación de páginas web con R Markdown [Video]. YouTube. https://www.youtube.com/watch?v=JxsreeFsu8g
+- Xie, Y., Allaire, J. J., & Grolemund, G. (2018). R Markdown websites. En R Markdown: The definitive guide. Chapman & Hall/CRC. https://bookdown.org/yihui/rmarkdown/rmarkdown-site.html
+- Xie, Y., Allaire, J. J., & Grolemund, G. (2018). HTML document. En R Markdown: The definitive guide. Chapman & Hall/CRC. https://bookdown.org/yihui/rmarkdown/html-document.html
+- Claude (2026) Resolución de problemas técnicos y de configuración con GitHub y dudas de código en R https://claude.ai/
+- Triola, M. F. (2009). Estadística (10.ª ed.). Pearson Educación.
+- Temario Estadística Basica. (2026) UNIR. Bloque 4. Estadística Inferencial

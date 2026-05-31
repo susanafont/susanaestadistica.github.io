@@ -9,3 +9,9 @@ navbar:
       href: bibliografia.html
     - text: "About"
       href: about.html
+output:
+  html_document:
+    theme: cerulean
+    mathjax: default
+  pdf_document:
+    latex_engine: xelatex
