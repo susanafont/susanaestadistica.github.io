@@ -1,0 +1,11 @@
+name: "Estadistica Inferencial"
+output_dir: "."
+navbar:
+  title: "Estadística Inferencial"
+  left:
+    - text: "Ejercicio"
+      href: index.html
+    - text: "Bibliografía"
+      href: bibliografia.html
+    - text: "About"
+      href: about.html
